@@ -13,6 +13,7 @@
  }
  
 
+
   function saveTostorage() {
     localStorage.setItem('cart',JSON.stringify(cart));
   }
