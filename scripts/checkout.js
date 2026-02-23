@@ -1,7 +1,18 @@
 import { cart,removeFromcart } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
+import  dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 updateCartQuantity();
+
+
+  console.log(dayjs());
+  const today = dayjs();
+
+  const deliveryDate = today.add(7,'days');
+  
+  console.log(deliveryDate.format('dddd,MMMM D' )); // format() date ko easy to read format me dega.
+  
+   
 
 let cartPageHTML = '';
 cart.forEach((cartItem)=>{
@@ -97,7 +108,7 @@ cart.forEach((cartItem)=>{
     `
 });
 document.querySelector('.js-order-summary').innerHTML = cartPageHTML;
-console.log(cartPageHTML);
+// console.log(cartPageHTML);
 
 document.querySelectorAll('.js-delete-quantity-link')
 .forEach((link)=>{
